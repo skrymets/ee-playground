@@ -15,6 +15,8 @@
  */
 package my.sandbox;
 
+import javax.ejb.EJB;
+import javax.ejb.EJBException;
 import my.sandbox.service.*;
 
 import javax.inject.Inject;
@@ -50,15 +52,16 @@ public class GreetingBeanTest {
         return jar;
     }
 
-    @Inject
+    // @Inject
+    @EJB
     GreetingBean bean;
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = EJBException.class)
     public void startAndHealthCheck() {
         assertNotNull(bean);
 
         String helloMessage = bean.sayHello("Sergii");
-        assertEquals(helloMessage, "Hello, Sergii!");
+        assertEquals(helloMessage, "Hello, Sergii! Hello my friend!");
         LOG.info(helloMessage);
 
         bean.sayHello(null);

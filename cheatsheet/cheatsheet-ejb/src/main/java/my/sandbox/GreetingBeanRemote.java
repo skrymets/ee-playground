@@ -20,6 +20,6 @@ import javax.ejb.Remote;
 @Remote
 public interface GreetingBeanRemote {
 
-    String sayHello(String guestName) throws NullPointerException, IllegalArgumentException;
+    String sayHello(String guestName);
 
 }

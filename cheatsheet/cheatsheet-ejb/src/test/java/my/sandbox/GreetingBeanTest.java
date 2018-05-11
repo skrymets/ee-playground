@@ -43,9 +43,9 @@ public class GreetingBeanTest {
                 .addClasses(
                         GreetingBean.class,
                         GreetingBeanRemote.class,
-                        GreetingBeanImpl.class,
-                        MessageProviderBean.class,
-                        TemplateType.class
+                        GreetingBeanImpl.class //,
+                        // MessageProviderBean.class,
+                        // TemplateType.class
                 )
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
         LOG.info(jar.toString(true));

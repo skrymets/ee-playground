@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_H3m5wFUXEei-3v9XyyM2Yw" name="NewModel">
+  <packagedElement xmi:type="uml:Actor" xmi:id="_SEGi8FUXEei-3v9XyyM2Yw" name="Kiosk"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_VtK7YFUXEei-3v9XyyM2Yw" name="Broker"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Z8Fy4FUXEei-3v9XyyM2Yw" name="Customer">
+    <eAnnotations xmi:id="_Z8Fy4VUXEei-3v9XyyM2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_yhBhQFUXEei-3v9XyyM2Yw" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_zT1eQFUXEei-3v9XyyM2Yw" name="Service Provider">
+    <eAnnotations xmi:id="_zT2FUFUXEei-3v9XyyM2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_MSG5sFUYEei-3v9XyyM2Yw" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_4qARsFUXEei-3v9XyyM2Yw" name="List Alailable Services">
+    <include xmi:id="_zEqnkFUcEei-3v9XyyM2Yw" addition="_rYj3gFUcEei-3v9XyyM2Yw"/>
+    <include xmi:id="_Ko_NgFUdEei-3v9XyyM2Yw" addition="_Dax3MFUZEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_9yt38FUXEei-3v9XyyM2Yw" memberEnd="_9yt38VUXEei-3v9XyyM2Yw _9yt38lUXEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_9yt38VUXEei-3v9XyyM2Yw" type="_SEGi8FUXEei-3v9XyyM2Yw" association="_9yt38FUXEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_9yt38lUXEei-3v9XyyM2Yw" type="_4qARsFUXEei-3v9XyyM2Yw" association="_9yt38FUXEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_D-8wsFUYEei-3v9XyyM2Yw" name="Print Tickets">
+    <include xmi:id="_5AgJUFUbEei-3v9XyyM2Yw" addition="_4qARsFUXEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_G1_PQFUYEei-3v9XyyM2Yw" memberEnd="_G1_2UFUYEei-3v9XyyM2Yw _G1_2UVUYEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_G1_2UFUYEei-3v9XyyM2Yw" type="_SEGi8FUXEei-3v9XyyM2Yw" association="_G1_PQFUYEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_G1_2UVUYEei-3v9XyyM2Yw" type="_D-8wsFUYEei-3v9XyyM2Yw" association="_G1_PQFUYEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_N39dMFUYEei-3v9XyyM2Yw" name="Provide a Service" isAbstract="true">
+    <include xmi:id="_EahngFUaEei-3v9XyyM2Yw" addition="_wt66AFUZEei-3v9XyyM2Yw"/>
+    <include xmi:id="_FGc5YFUaEei-3v9XyyM2Yw" addition="_AxC_YFUaEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SQVysFUYEei-3v9XyyM2Yw" memberEnd="_SQWZwFUYEei-3v9XyyM2Yw _SQWZwVUYEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_SQWZwFUYEei-3v9XyyM2Yw" type="_zT1eQFUXEei-3v9XyyM2Yw" association="_SQVysFUYEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_SQWZwVUYEei-3v9XyyM2Yw" type="_N39dMFUYEei-3v9XyyM2Yw" association="_SQVysFUYEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Udj4MFUYEei-3v9XyyM2Yw" name="Consume a Service" isAbstract="true"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XwN7wFUYEei-3v9XyyM2Yw" memberEnd="_XwN7wVUYEei-3v9XyyM2Yw _XwOi0FUYEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_XwN7wVUYEei-3v9XyyM2Yw" type="_Z8Fy4FUXEei-3v9XyyM2Yw" association="_XwN7wFUYEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_XwOi0FUYEei-3v9XyyM2Yw" type="_Udj4MFUYEei-3v9XyyM2Yw" association="_XwN7wFUYEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_fl_lMFUYEei-3v9XyyM2Yw" name="Load the Queue with Tasks"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_nR3EsFUYEei-3v9XyyM2Yw" name="Request a Service">
+    <include xmi:id="_rDpUQFUYEei-3v9XyyM2Yw" addition="_D-8wsFUYEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qBM_0FUYEei-3v9XyyM2Yw" memberEnd="_qBM_0VUYEei-3v9XyyM2Yw _qBM_0lUYEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_qBM_0VUYEei-3v9XyyM2Yw" type="_Z8Fy4FUXEei-3v9XyyM2Yw" association="_qBM_0FUYEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_qBM_0lUYEei-3v9XyyM2Yw" type="_nR3EsFUYEei-3v9XyyM2Yw" association="_qBM_0FUYEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__fK9QFUYEei-3v9XyyM2Yw" memberEnd="__fLkUFUYEei-3v9XyyM2Yw __fLkUVUYEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="__fLkUFUYEei-3v9XyyM2Yw" type="_VtK7YFUXEei-3v9XyyM2Yw" association="__fK9QFUYEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="__fLkUVUYEei-3v9XyyM2Yw" type="_fl_lMFUYEei-3v9XyyM2Yw" association="__fK9QFUYEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Dax3MFUZEei-3v9XyyM2Yw" name="Employ / Unemploy Service Providers">
+    <include xmi:id="_AqaEgFUdEei-3v9XyyM2Yw" addition="_7n-scFUcEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_KhurwFUZEei-3v9XyyM2Yw" memberEnd="_KhurwVUZEei-3v9XyyM2Yw _KhurwlUZEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_KhurwVUZEei-3v9XyyM2Yw" type="_VtK7YFUXEei-3v9XyyM2Yw" association="_KhurwFUZEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_KhurwlUZEei-3v9XyyM2Yw" type="_Dax3MFUZEei-3v9XyyM2Yw" association="_KhurwFUZEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_OM_ckFUZEei-3v9XyyM2Yw" name="Collect Service Statistic"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fFEM8FUZEei-3v9XyyM2Yw" memberEnd="_fFEM8VUZEei-3v9XyyM2Yw _fFEM8lUZEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_fFEM8VUZEei-3v9XyyM2Yw" type="_VtK7YFUXEei-3v9XyyM2Yw" association="_fFEM8FUZEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_fFEM8lUZEei-3v9XyyM2Yw" type="_OM_ckFUZEei-3v9XyyM2Yw" association="_fFEM8FUZEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_wt66AFUZEei-3v9XyyM2Yw" name="Take tasks"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_AxC_YFUaEei-3v9XyyM2Yw" name="Complete tasks"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_g-A2IFUaEei-3v9XyyM2Yw" name="Service Level Controller">
+    <eAnnotations xmi:id="_g-A2IVUaEei-3v9XyyM2Yw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_g-A2IlUaEei-3v9XyyM2Yw" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_lbuXkFUaEei-3v9XyyM2Yw" name="Analyse Service Startistic">
+    <include xmi:id="_sTVvoFUaEei-3v9XyyM2Yw" addition="_OM_ckFUZEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rgYBoFUaEei-3v9XyyM2Yw" memberEnd="_rgYBoVUaEei-3v9XyyM2Yw _rgYBolUaEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_rgYBoVUaEei-3v9XyyM2Yw" type="_g-A2IFUaEei-3v9XyyM2Yw" association="_rgYBoFUaEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_rgYBolUaEei-3v9XyyM2Yw" type="_lbuXkFUaEei-3v9XyyM2Yw" association="_rgYBoFUaEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_DMobkFUbEei-3v9XyyM2Yw" name="Show the Queue State"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HbPxEFUbEei-3v9XyyM2Yw" memberEnd="_HbPxEVUbEei-3v9XyyM2Yw _HbQYIFUbEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_HbPxEVUbEei-3v9XyyM2Yw" type="_VtK7YFUXEei-3v9XyyM2Yw" association="_HbPxEFUbEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_HbQYIFUbEei-3v9XyyM2Yw" type="_DMobkFUbEei-3v9XyyM2Yw" association="_HbPxEFUbEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Vof58FUbEei-3v9XyyM2Yw" name="Watch Task Lifecycle"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gKkKgFUbEei-3v9XyyM2Yw" memberEnd="_gKkKgVUbEei-3v9XyyM2Yw _gKkKglUbEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_gKkKgVUbEei-3v9XyyM2Yw" type="_Vof58FUbEei-3v9XyyM2Yw" association="_gKkKgFUbEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_gKkKglUbEei-3v9XyyM2Yw" type="_VtK7YFUXEei-3v9XyyM2Yw" association="_gKkKgFUbEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_v4xv0FUbEei-3v9XyyM2Yw" name="Give Service Feedback"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_z1jHYFUbEei-3v9XyyM2Yw" memberEnd="_z1jHYVUbEei-3v9XyyM2Yw _z1jHYlUbEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_z1jHYVUbEei-3v9XyyM2Yw" type="_Z8Fy4FUXEei-3v9XyyM2Yw" association="_z1jHYFUbEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_z1jHYlUbEei-3v9XyyM2Yw" type="_v4xv0FUbEei-3v9XyyM2Yw" association="_z1jHYFUbEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_rYj3gFUcEei-3v9XyyM2Yw" name="Provide Servcie Portfolio"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_xpzMEFUcEei-3v9XyyM2Yw" memberEnd="_xpzzIFUcEei-3v9XyyM2Yw _xpzzIVUcEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="_xpzzIFUcEei-3v9XyyM2Yw" type="_zT1eQFUXEei-3v9XyyM2Yw" association="_xpzMEFUcEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="_xpzzIVUcEei-3v9XyyM2Yw" type="_rYj3gFUcEei-3v9XyyM2Yw" association="_xpzMEFUcEei-3v9XyyM2Yw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_7n-scFUcEei-3v9XyyM2Yw" name="Inform Working Hours"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="__2mpAFUcEei-3v9XyyM2Yw" memberEnd="__2mpAVUcEei-3v9XyyM2Yw __2mpAlUcEei-3v9XyyM2Yw">
+    <ownedEnd xmi:id="__2mpAVUcEei-3v9XyyM2Yw" type="_zT1eQFUXEei-3v9XyyM2Yw" association="__2mpAFUcEei-3v9XyyM2Yw"/>
+    <ownedEnd xmi:id="__2mpAlUcEei-3v9XyyM2Yw" type="_7n-scFUcEei-3v9XyyM2Yw" association="__2mpAFUcEei-3v9XyyM2Yw"/>
+  </packagedElement>
+</uml:Model>

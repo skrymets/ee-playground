@@ -18,6 +18,8 @@ package my.sandbox;
 import javax.ejb.Local;
 
 @Local
-public interface GreetingBean extends GreetingBeanRemote {
+public interface GreetingBean { // extends GreetingBeanRemote {
+
+    public String sayHello(String guestName) throws NullPointerException, IllegalArgumentException;
 
 }

@@ -1,8 +1,8 @@
 package my.sandbox.service;
 
-import javax.ejb.Singleton;
-import javax.ejb.LocalBean;
 import java.io.Serializable;
+import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
 
 @Singleton
 @LocalBean

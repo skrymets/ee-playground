@@ -24,12 +24,13 @@ public interface CDI {
     public interface Profiles {
 
         public static final String SHELL = "intercactive-shell";
-        public static final String BROKER = "broker-node";
-        public static final String KIOSK = "kiosk-node";
-        public static final String PROVIDER = "service-provider-node";
-        /**
-         * Service Level Inspector role node
-         */
-        public static final String SLI = "service-inspector-node";
+    }
+
+    public interface Roles {
+
+        public static final String BROKER = "role-broker-node";
+        public static final String KIOSK = "role-kiosk-node";
+        public static final String PROVIDER = "role-service-provider-node";
+        public static final String SLI = "role-service-inspector";
     }
 }

@@ -15,9 +15,11 @@
  */
 package equeue.shell;
 
+import equeue.CDI;
 import equeue.NodeControl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.annotation.Profile;
 import org.springframework.shell.ExitRequest;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -27,6 +29,7 @@ import org.springframework.shell.standard.ShellMethod;
  * @author skrymets
  */
 @ShellComponent
+@Profile(CDI.Profiles.SHELL)
 public class Quit implements org.springframework.shell.standard.commands.Quit.Command {
 
     @Autowired
@@ -38,7 +41,7 @@ public class Quit implements org.springframework.shell.standard.commands.Quit.Co
     @ShellMethod(value = "Exit the shell.", key = {"quit", "exit"})
     public void quit() {
         eventPublisher.publishEvent(new NodeControl.ShutdownNodeEvent(this));
-        
+
         throw new ExitRequest();
     }
 

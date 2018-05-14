@@ -13,22 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package equeue.services;
+package equeue.shell;
 
-import org.springframework.context.annotation.Profile;
+import equeue.NodeControl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.shell.ExitRequest;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
-import equeue.CDI;
 
+/**
+ *
+ * @author skrymets
+ */
 @ShellComponent
-@Profile(CDI.Profiles.SHELL)
-public class InfoShellService {
+public class Quit implements org.springframework.shell.standard.commands.Quit.Command {
 
-    private static final String CMD_HELP_STATUS = "Show current node status";
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
 
-    @ShellMethod(CMD_HELP_STATUS)
-    public String status() {
-        return "unknown";
+    public interface Command {
+    }
+
+    @ShellMethod(value = "Exit the shell.", key = {"quit", "exit"})
+    public void quit() {
+        eventPublisher.publishEvent(new NodeControl.ShutdownNodeEvent(this));
+        
+        throw new ExitRequest();
     }
 
 }

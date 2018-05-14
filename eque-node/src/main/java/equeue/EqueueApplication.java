@@ -12,28 +12,45 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.shell.jline.InteractiveShellApplicationRunner;
 import org.springframework.shell.jline.ScriptShellApplicationRunner;
+import org.springframework.util.StringUtils;
 
 @SpringBootApplication
+//@Order(InteractiveShellApplicationRunner.PRECEDENCE + 100)
 public class EqueueApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(EqueueApplication.class);
 
     public static void main(String[] args) {
 
+        // -------------------------------------------------------------------------------
+        String[] specialSetup = {
+            // "--spring.shell.command.script.enabled=false",
+            // spring-boot.run.arguments=-shell
+            // Actions -> Run Project | Run file with main()
+            "-shell"
+        };
+        String[] fullArgs = StringUtils.concatenateStringArrays(args, specialSetup);
+
+        // -------------------------------------------------------------------------------
         Option shellOption = Option.builder("shell").desc("Run interactive shell").build();
         Options options = new Options().addOption(shellOption);
 
         CommandLine cmd;
         try {
-            cmd = new DefaultParser().parse(options, args);
+            cmd = new DefaultParser().parse(options, fullArgs);
         } catch (Exception e) {
             LOG.error(e.getMessage());
             return;
         }
 
+        // -------------------------------------------------------------------------------
         SpringApplication app = new SpringApplication(EqueueApplication.class);
 
+        // -------------------------------------------------------------------------------
         Map<String, Object> properties = new HashMap<>();
+        properties.put("spring.shell.command.script.enabled", false);
+        
+        // -------------------------------------------------------------------------------
 
         final boolean runShell = cmd.hasOption(shellOption.getOpt());
         properties.put(InteractiveShellApplicationRunner.SPRING_SHELL_INTERACTIVE_ENABLED, runShell);
@@ -42,7 +59,8 @@ public class EqueueApplication {
             app.setAdditionalProfiles(CDI.Profiles.SHELL);
         }
 
+        // -------------------------------------------------------------------------------
         app.setDefaultProperties(properties);
-        app.run(args);
+        app.run(fullArgs);
     }
 }

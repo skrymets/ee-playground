@@ -1,16 +1,21 @@
 package equeue;
 
+import static org.junit.Assert.*;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class EqueueApplicationTests {
+public class EqueueApplicationTests extends ShellTest {
 
     @Test
-    public void contextLoads() {
+    public void testWithNoShell() {
+        System.out.println("No shell is required for this test");
+    }
+
+    @Test
+    public void testWithShell() {
+        Object statusResult = getShell().evaluate(() -> "status");
+        System.out.println(statusResult);
+        assertEquals(statusResult, "unknown");
+
     }
 
 }

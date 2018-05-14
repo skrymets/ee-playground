@@ -13,22 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package equeue.services;
+package equeue;
 
-import org.springframework.context.annotation.Profile;
-import org.springframework.shell.standard.ShellComponent;
-import org.springframework.shell.standard.ShellMethod;
-import equeue.CDI;
+/**
+ *
+ * @author skrymets
+ */
+public final class CDI {
 
-@ShellComponent
-@Profile(CDI.Profiles.SHELL)
-public class InfoShellService {
+    public static final class Profiles {
 
-    private static final String CMD_HELP_STATUS = "Show current node status";
-
-    @ShellMethod(CMD_HELP_STATUS)
-    public String status() {
-        return "unknown";
+        public static final String SHELL = "intercactive-shell";
+        public static final String BROKER = "broker-node";
+        public static final String KIOSK = "kiosk-node";
+        public static final String PROVIDER = "service-provider-node";
+        /**
+         * Service Level Inspector role node
+         */
+        public static final String SLI = "service-inspector-node";
     }
-
 }

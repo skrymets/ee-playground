@@ -19,9 +19,9 @@ package equeue;
  *
  * @author skrymets
  */
-public final class CDI {
+public interface CDI {
 
-    public static final class Profiles {
+    public interface Profiles {
 
         public static final String SHELL = "intercactive-shell";
         public static final String BROKER = "broker-node";

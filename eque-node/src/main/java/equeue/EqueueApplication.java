@@ -15,13 +15,12 @@ import org.springframework.shell.jline.ScriptShellApplicationRunner;
 import org.springframework.util.StringUtils;
 
 @SpringBootApplication
-//@Order(InteractiveShellApplicationRunner.PRECEDENCE + 100)
 public class EqueueApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(EqueueApplication.class);
 
     public static void main(String[] args) {
-
+        
         // -------------------------------------------------------------------------------
         String[] specialSetup = {
             // "--spring.shell.command.script.enabled=false",

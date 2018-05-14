@@ -15,26 +15,27 @@
  */
 package equeue;
 
-import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.shell.Shell;
 import org.springframework.shell.jline.InteractiveShellApplicationRunner;
 import org.springframework.shell.jline.ScriptShellApplicationRunner;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  *
  * @author skrymets
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(properties = {
     ScriptShellApplicationRunner.SPRING_SHELL_SCRIPT_ENABLED + "=false",
     InteractiveShellApplicationRunner.SPRING_SHELL_INTERACTIVE_ENABLED + "=false"
 })
 @ActiveProfiles(CDI.Profiles.SHELL)
-public class ShellTest {
+public abstract class ShellTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ShellTest.class);
 
     @Autowired
     protected Shell shell;
@@ -42,5 +43,4 @@ public class ShellTest {
     public Shell getShell() {
         return shell;
     }
-
 }
